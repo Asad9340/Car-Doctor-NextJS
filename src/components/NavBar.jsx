@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
 const NavBar = () => {
   return (
     <div>
@@ -7,7 +9,12 @@ const NavBar = () => {
           <nav className="flex justify-between text-white max-w-7xl mx-auto">
             <div className="px-5 xl:px-12 py-6 flex w-full items-center">
               <Link className="text-3xl font-bold font-heading" href="/">
-                <img className="w[80px]" src="../../assets/logo.svg" alt="" />
+                <Image
+                  src="/assets/logo.svg"
+                  width={107}
+                  height={87}
+                  alt="Car Doctor Logo"
+                />
               </Link>
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li>
@@ -44,8 +51,7 @@ const NavBar = () => {
               </div>
             </div>
             <a className="xl:hidden flex mr-6 items-center" href="#">
-
-            <span className='text-red-500'>burger</span>
+              <span className="text-red-500">burger</span>
             </a>
           </nav>
         </section>
