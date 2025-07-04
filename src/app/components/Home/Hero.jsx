@@ -33,15 +33,15 @@ const Hero = () => {
                       className="h-full w-full object-cover rounded-xl object-center"
                     />
                     <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] rounded-xl" />
-                    <div className="absolute top-1/2 -translate-y-1/2 left-[100px] max-w-[460px] flex flex-col gap-4">
-                      <h2 className="text-4xl md:text-6xl text-[#FFF] font-bold leading-[50px] md:leading-[65px]">
+                    <div className="absolute top-1/2 -translate-y-1/2  md:left-[100px] max-w-[460px] flex flex-col gap-4">
+                      <h2 className="text-4xl md:text-6xl text-[#FFF] font-bold leading-[50px] md:leading-[65px] text-center md:text-left">
                         Affordable Price For Car Servicing
                       </h2>
-                      <p className="text-[18px] text-[#FFF] leading-[30px]">
+                      <p className="text-[18px] text-[#FFF] leading-[30px]  text-center md:text-left">
                         There are many variations of passages of available, but
                         the majority have suffered alteration in some form
                       </p>
-                      <div className="flex gap-5">
+                      <div className="flex gap-5 justify-center md:justify-start">
                         <button
                           type="button"
                           className="rounded-[5px] bg-[#FF3811] px-[25px] py-[15px] text-white"
