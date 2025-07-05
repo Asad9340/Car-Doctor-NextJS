@@ -1,4 +1,3 @@
-import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import {
   Carousel,
@@ -6,7 +5,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
+} from '../../../components/ui/carousel';
+import { Card, CardContent } from '../../../components/ui/card';
 
 const Hero = () => {
   const ImageList = [

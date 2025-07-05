@@ -1,8 +1,12 @@
-import dbConnect from '@/lib/dbConnect';
+import dbConnect, { allCollectionName } from '../../../lib/dbConnect';
 import Image from 'next/image';
+import { FiArrowRight } from 'react-icons/fi';
+import Link  from 'next/link';
 
 const OurService = async () => {
-  const servicesCollection = await dbConnect('services');
+  const servicesCollection = await dbConnect(
+    allCollectionName.serviceCollection
+  );
   const servicesData = await servicesCollection.find({}).toArray();
   return (
     <div className="px-5 xl:px-8 py-6 max-w-7xl mx-auto my-8 md:my-[120px]">
@@ -40,7 +44,9 @@ const OurService = async () => {
                 Price: ${serviceItem.price}
               </p>
               <div>
-                <img className="w-6 h-6" src="/assets/icons/next.svg" alt="" />
+                <Link href={`/services/${serviceItem._id}`} >
+                  <FiArrowRight className="text-[#FF3811]" />
+                </Link>
               </div>
             </div>
           </div>
