@@ -18,7 +18,10 @@ const OurService = async () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {servicesData?.map(serviceItem => (
-          <div key={serviceItem._id} className="rounded-xl border border-[#E8E8E8] p-3 md:p-6 flex flex-col gap-2 md:gap-5 ">
+          <div
+            key={serviceItem._id}
+            className="rounded-xl border border-[#E8E8E8] p-3 md:p-6 flex flex-col gap-2 md:gap-5 "
+          >
             <div>
               <Image
                 className="w-full h-[210px] object-cover rounded-xl "
@@ -32,9 +35,14 @@ const OurService = async () => {
             <h3 className="text-2xl text-[#444] font-bold ">
               {serviceItem.title}
             </h3>
-            <p className="text-xl text-[#FF3811] font-semibold ">
-              Price: ${serviceItem.price}
-            </p>
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-xl text-[#FF3811] font-semibold ">
+                Price: ${serviceItem.price}
+              </p>
+              <div>
+                <img className="w-6 h-6" src="/assets/icons/next.svg" alt="" />
+              </div>
+            </div>
           </div>
         ))}
       </div>
