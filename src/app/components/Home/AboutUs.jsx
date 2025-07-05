@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const AboutUs = () => {
   return (
-    <div className="px-5 xl:px-8 py-6 max-w-7xl mx-auto my-[120px]">
+    <div className="px-5 xl:px-8 py-6 max-w-7xl mx-auto my-8 md:my-[120px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-14">
         <div className="relative">
           <Image
@@ -25,7 +25,7 @@ const AboutUs = () => {
             <h5 className="text-xl font-bold text-[#FF3811] ">About Us</h5>
           </div>
           <div className="flex flex-col gap-6 justify-between">
-            <h2 className="max-w-[376] text-[45px] font-bold text-[#151515] leading-normal">
+            <h2 className="max-w-[376] text-3xl md:text-[45px] font-bold text-[#151515] leading-normal">
               We are qualified & of experience in this field
             </h2>
             <div className="flex flex-col justify-center gap-4 max-w-[490px] ">
