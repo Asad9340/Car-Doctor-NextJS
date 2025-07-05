@@ -1,11 +1,13 @@
 
 import AboutUs from './AboutUs';
 import Hero from './Hero';
+import OurService from './OurService';
 const Home = () => {
   return (
     <div>
       <Hero />
-      <AboutUs/>
+      <AboutUs />
+      <OurService/>
     </div>
   )
 }
