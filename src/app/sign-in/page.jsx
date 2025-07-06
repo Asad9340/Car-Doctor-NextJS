@@ -16,7 +16,7 @@ const SignIn = () => {
             alt="register image"
           />
         </div>
-        <div className="p10 md:p-16 flex flex-col justify-center items-center gap-6 md:gap-10 border border-[#D0D0D0] rounded-xl">
+        <div className="p-10 md:p-16 flex flex-col justify-center items-center gap-6 md:gap-10 border border-[#D0D0D0] rounded-xl w-full">
           <h2 className="text-4xl font-semibold text-[#444] text-center">
             Sign Up
           </h2>

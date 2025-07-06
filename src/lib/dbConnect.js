@@ -2,7 +2,8 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 const uri = process.env.MONGO_URL;
 
 export const allCollectionName={
-  serviceCollection : 'services'
+  serviceCollection: 'services',
+  userCollection: 'users'
 }
 const client = new MongoClient(uri, {
   serverApi: {
