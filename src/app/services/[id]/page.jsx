@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { FaFileAlt } from 'react-icons/fa';
 
 const ServiceDetails = async ({ params }) => {
-  const { id } =await params;
+  const { id } = await params;
   const serviceCollection = await dbConnect(
     allCollectionName.serviceCollection
   );
@@ -299,7 +299,7 @@ const ServiceDetails = async ({ params }) => {
                   </span>
                 </p>
               </div>
-              <div className='flex justify-center -mt-6 md:-mt-8'>
+              <div className="flex justify-center -mt-6 md:-mt-8">
                 <button
                   type="button"
                   className="rounded-[5px] bg-[#FF3811] px-[25px] py-[15px] text-white font-semibold text-lg"
@@ -307,6 +307,19 @@ const ServiceDetails = async ({ params }) => {
                   Get A Quote
                 </button>
               </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center gap-4 md:gap-7 ">
+            <h3 className="text-2xl md:text-4xl font-bold text-[#151515]  ">
+              Price ${price}
+            </h3>
+            <div>
+              <button
+                type="button"
+                className="rounded-[5px] bg-[#FF3811] px-[25px] py-[15px] text-white w-full text-lg font-semibold"
+              >
+                Proceed Checkout
+              </button>
             </div>
           </div>
         </div>
