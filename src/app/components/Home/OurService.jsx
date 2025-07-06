@@ -8,6 +8,7 @@ const OurService = async () => {
     allCollectionName.serviceCollection
   );
   const servicesData = await servicesCollection.find({}).toArray();
+  console.log(servicesData);
   return (
     <div className="px-5 xl:px-8 py-6 max-w-7xl mx-auto my-8 md:my-[120px]">
       <div className="flex flex-col items-center gap-3 md:gap-5 mb-8 md:mb-10 max-w-[700px] mx-auto">

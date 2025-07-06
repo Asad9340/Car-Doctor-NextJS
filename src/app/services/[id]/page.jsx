@@ -1,17 +1,19 @@
 import { ObjectId } from 'mongodb';
 import Image from 'next/image';
 import dbConnect, { allCollectionName } from '../../../lib/dbConnect';
+import { FiArrowRight } from 'react-icons/fi';
+import Link from 'next/link';
 
 const ServiceDetails = async ({ params }) => {
   const { id } = params;
   const serviceCollection = await dbConnect(
     allCollectionName.serviceCollection
   );
-  const serviceData = await serviceCollection.findOne({
+  const singleServiceData = await serviceCollection.findOne({
     _id: new ObjectId(id),
   });
-
-  if (!serviceData) {
+  const servicesData = await serviceCollection.find({}).toArray();
+  if (!singleServiceData) {
     return (
       <div className="max-w-7xl mx-auto py-10 px-4 text-center text-xl text-red-500">
         Service not found.
@@ -19,7 +21,7 @@ const ServiceDetails = async ({ params }) => {
     );
   }
 
-  const { title, img, description, price, facility = [] } = serviceData;
+  const { title, img, description, price, facility = [] } = singleServiceData;
   return (
     <div className="px-5 xl:px-12 max-w-7xl mx-auto">
       {/* banner section  */}
@@ -166,7 +168,7 @@ const ServiceDetails = async ({ params }) => {
                 </p>
               </div>
             </div>
-            <div className='relative'>
+            <div className="relative">
               <Image
                 className="w-full h-[400px] object-cover object-center rounded-xl"
                 src="/assets/images/banner/2.jpg"
@@ -184,7 +186,41 @@ const ServiceDetails = async ({ params }) => {
             </div>
           </div>
         </div>
-        <div>hello</div>
+        <div className="flex flex-col gap-4 md:gap-8 ">
+          <div className="p-6 md:p-10 rounded-xl bg-[#F3F3F3]">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#151515] mb-3 md:mb-5">
+              Services
+            </h3>
+            <div className="flex flex-col gap-3 md:gap-5">
+              {servicesData?.map(serviceItem => (
+                <Link
+                  href={`/services/${serviceItem._id}`}
+                  key={serviceItem._id}
+                  className={`flex items-center justify-between gap-4 p-3 md:p-5  rounded-lg ${
+                    serviceItem?.title === title ? 'bg-[#FF3811]' : 'bg-[#fff]'
+                  }`}
+                >
+                  <p
+                    className={`text-base font-semibold ${
+                      serviceItem?.title === title
+                        ? 'text-white'
+                        : 'text-[#151515]'
+                    }`}
+                  >
+                    {serviceItem.title}
+                  </p>
+                  <FiArrowRight
+                    className={
+                      serviceItem?.title === title
+                        ? 'text-white'
+                        : 'text-[#FF3811]'
+                    }
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
