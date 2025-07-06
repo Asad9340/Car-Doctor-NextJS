@@ -3,9 +3,10 @@ import Image from 'next/image';
 import dbConnect, { allCollectionName } from '../../../lib/dbConnect';
 import { FiArrowRight } from 'react-icons/fi';
 import Link from 'next/link';
+import { FaFileAlt } from 'react-icons/fa';
 
 const ServiceDetails = async ({ params }) => {
-  const { id } = params;
+  const { id } =await params;
   const serviceCollection = await dbConnect(
     allCollectionName.serviceCollection
   );
@@ -28,7 +29,7 @@ const ServiceDetails = async ({ params }) => {
       <div className="relative w-full h-[300px] rounded-xl overflow-hidden">
         <Image
           className="w-full h-full object-cover object-center"
-          src="/assets/images/banner/4.jpg"
+          src="/assets/images/checkout/checkout.png"
           width={1137}
           height={300}
           alt="banner-image"
@@ -218,6 +219,94 @@ const ServiceDetails = async ({ params }) => {
                   />
                 </Link>
               ))}
+            </div>
+          </div>
+          <div className="p-6 md:p-10 rounded-xl bg-[#151515] flex flex-col gap-4 md:gap-5">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#FFF] mb-3 md:mb-5">
+              Download
+            </h3>
+            <div className="flex items-center justify-between gap-3 md:gap-5">
+              <div className="flex items-center gap-4 md:gap-5">
+                <FaFileAlt className="text-3xl text-[#FFF]" />
+                <div>
+                  <h3 className="text-lg font-semibold text-[#fff] ">
+                    Our Brochure
+                  </h3>
+                  <p className="text-base text-[#A2A2A2]">Download</p>
+                </div>
+              </div>
+
+              <div className="bg-[#FF3811] flex p-3 md:p-4 rounded-md">
+                <FiArrowRight className="text-[#FFF]" />
+              </div>
+            </div>
+            <div className="flex items-center justify-between gap-3 md:gap-5">
+              <div className="flex items-center gap-4 md:gap-5">
+                <FaFileAlt className="text-3xl text-[#FFF]" />
+                <div>
+                  <h3 className="text-lg font-semibold text-[#fff] ">
+                    Company Details
+                  </h3>
+                  <p className="text-base text-[#A2A2A2]">Download</p>
+                </div>
+              </div>
+
+              <div className="bg-[#FF3811] flex p-3 md:p-4 rounded-md">
+                <FiArrowRight className="text-[#FFF]" />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-4 md:gap-6 p-6 md:p-12 rounded-xl bg-[#151515]">
+            <div>
+              <div>
+                <Image
+                  className="w-full h-[72px] object-contain rounded-xl"
+                  src="/assets/icons/carhandle.png"
+                  width={130}
+                  height={70}
+                  alt="banner image"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-[#FFF] mb-3 md:mb-5">
+                Car Doctor
+              </h3>
+            </div>
+            <div>
+              <p className="text-xl font-bold text-[#FFF] text-center">
+                Need Help? We Are Here
+              </p>
+              <p className="text-xl font-bold text-[#FFF] text-center">
+                To Help You
+              </p>
+            </div>
+            <div>
+              <div className="flex flex-col items-center justify-between gap-2 bg-[#fff] rounded-xl pt-4 px-6 md:px-10 pb-10 ">
+                <p>
+                  <span className="text-xl font-bold text-[#FF3811] ">
+                    Car Doctor{' '}
+                  </span>
+                  <span className="text-xl font-bold text-[#151515] ">
+                    Special
+                  </span>
+                </p>
+                <p>
+                  <span className="text-base font-bold text-[#737373] ">
+                    Save up to{' '}
+                  </span>
+                  <span className="text-base font-bold text-[#FF3811] ">
+                    60% off
+                  </span>
+                </p>
+              </div>
+              <div className='flex justify-center -mt-6 md:-mt-8'>
+                <button
+                  type="button"
+                  className="rounded-[5px] bg-[#FF3811] px-[25px] py-[15px] text-white font-semibold text-lg"
+                >
+                  Get A Quote
+                </button>
+              </div>
             </div>
           </div>
         </div>
