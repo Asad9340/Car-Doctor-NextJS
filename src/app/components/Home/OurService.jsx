@@ -8,7 +8,6 @@ const OurService = async () => {
     allCollectionName.serviceCollection
   );
   const servicesData = await servicesCollection.find({}).toArray();
-  console.log(servicesData);
   return (
     <div className="px-5 xl:px-8 py-6 max-w-7xl mx-auto my-8 md:my-[120px]">
       <div className="flex flex-col items-center gap-3 md:gap-5 mb-8 md:mb-10 max-w-[700px] mx-auto">
@@ -44,9 +43,9 @@ const OurService = async () => {
               <p className="text-xl text-[#FF3811] font-semibold ">
                 Price: ${serviceItem.price}
               </p>
-              <div>
-                <Link href={`/services/${serviceItem._id}`} >
-                  <FiArrowRight className="text-[#FF3811]" />
+              <div className=" border border-red-500 rounded-full shadow-lg text-[#FF3811] hover:bg-[#FF3811] hover:text-white  transition-all duration-300 ease-in-out">
+                <Link href={`/services/${serviceItem._id}`} className='p-3 flex w-10 h-10 items-center justify-center'>
+                  <FiArrowRight />
                 </Link>
               </div>
             </div>

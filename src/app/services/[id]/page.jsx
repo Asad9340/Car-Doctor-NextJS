@@ -281,7 +281,7 @@ const ServiceDetails = async ({ params }) => {
               </p>
             </div>
             <div>
-              <div className="flex flex-col items-center justify-between gap-2 bg-[#fff] rounded-xl pt-4 px-6 md:px-10 pb-10 ">
+              <div className="flex flex-col items-center justify-between gap-2 bg-[#fff] rounded-xl pt-4 px-6 md:px-10 pb-10 min-w-[270px]">
                 <p>
                   <span className="text-xl font-bold text-[#FF3811] ">
                     Car Doctor{' '}
