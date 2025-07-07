@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FaFacebook } from 'react-icons/fa';
 import { ImLinkedin } from 'react-icons/im';
 import { FaGoogle } from 'react-icons/fa';
+import SignInForm from './components/SignInForm';
 const SignIn = () => {
   return (
     <div className="px-5 xl:px-8 max-w-7xl mx-auto">
@@ -18,46 +19,9 @@ const SignIn = () => {
         </div>
         <div className="p-10 md:p-16 flex flex-col justify-center items-center gap-6 md:gap-10 border border-[#D0D0D0] rounded-xl w-full">
           <h2 className="text-4xl font-semibold text-[#444] text-center">
-            Sign Up
+            Sign In
           </h2>
-          <div className="flex flex-col gap-4 md:gap-8 w-full">
-            <div className="flex flex-col gap-4 ">
-              <label
-                className="text-lg font-semibold text-[#444]"
-                htmlFor="userEmail"
-              >
-                Email
-              </label>
-              <input
-                className="px-4 md:px-6 py-3 md:py-4 rounded-xl border border-[#E8E8E8] text-[#A2A2A2] text-base"
-                type="email"
-                placeholder="Your Email"
-                name="userEmail"
-              />
-            </div>
-            <div className="flex flex-col gap-4 ">
-              <label
-                className="text-lg font-semibold text-[#444]"
-                htmlFor="userPassword"
-              >
-                Password
-              </label>
-              <input
-                className="px-4 md:px-6 py-3 md:py-4 rounded-xl border border-[#E8E8E8] text-[#A2A2A2] text-base"
-                type="password"
-                placeholder="Your Password"
-                name="userPassword"
-              />
-            </div>
-            <div>
-              <button
-                type="button"
-                className="rounded-[5px] bg-[#FF3811] px-[25px] py-[15px] text-white text-xl font-semibold w-full"
-              >
-                Sign In
-              </button>
-            </div>
-          </div>
+          <SignInForm />
           <div className="flex flex-col gap-4 md:gap-8 text-center my-4 md:my-8">
             <p className="font-medium text-lg text-[#444]">Or Sign Up with</p>
             <div className=" flex gap-3 md:gap-6 items-center justify-center">
