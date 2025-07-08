@@ -1,6 +1,6 @@
 'use server';
-import dbConnect, { allCollectionName } from '@/lib/dbConnect';
 import bcrypt from 'bcryptjs';
+import dbConnect, { allCollectionName } from './../../../lib/dbConnect';
 
 export const registerUser = async userData => {
   try {
