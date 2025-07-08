@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 const NavBar = () => {
   const { data: session, status } = useSession();
@@ -50,7 +50,7 @@ const NavBar = () => {
               </ul>
               <div className="hidden xl:flex items-center space-x-5">
                 {status === 'authenticated' ? (
-                  <button className="px-6 py-2 border border-[#FF3811] font-semibold text-lg rounded-md text-[#FF3811] hover:bg-[#ff3911d3] hover:text-white transition duration-300">
+                  <button onClick={()=>signOut()} className="px-6 py-2 border border-[#FF3811] font-semibold text-lg rounded-md text-[#FF3811] hover:bg-[#ff3911d3] hover:text-white transition duration-300">
                     LogOut
                   </button>
                 ) : (

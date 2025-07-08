@@ -11,8 +11,8 @@ const SignInForm = () => {
     try {
       const response = await signIn('credentials', { email: userEmail, password: userPassword, callbackUrl: '/', redirect: false });
       if (response.ok) {
-        router.push('/')
         toast.success('Sign In Successfully')
+        router.push('/')
         event.target.reset();
       } else {
         toast.error('Authentication Failed...')
