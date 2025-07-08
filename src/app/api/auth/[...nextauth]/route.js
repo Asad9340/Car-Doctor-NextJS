@@ -9,7 +9,7 @@ export const authOptions = {
       async authorize(credentials, req) {
         const user = await SignInUser(credentials);
         if (user) {
-          return user;
+          return user.user;
         } else {
           return null;
         }
