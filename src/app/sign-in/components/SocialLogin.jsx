@@ -1,9 +1,11 @@
 "use client"
+import { signIn } from "next-auth/react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const SocialLogin = () => {
-  const handleSocialMediaLogin = (providerName)=>{
-    console.log(providerName);
+  const handleSocialMediaLogin =async (providerName)=>{
+    const result = await signIn(providerName,{redirect:false});
+    console.log(result)
   }
   return (
     <>
