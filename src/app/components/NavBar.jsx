@@ -53,7 +53,7 @@ const NavBar = () => {
                 {status === 'authenticated' ? (
                   <>
                     <Image
-                      className="w-[50px] h-[50px] object-cover object-center "
+                      className="w-[50px] h-[50px] rounded-full object-cover object-center "
                       src={session?.user?.image}
                       width={50}
                       height={50}

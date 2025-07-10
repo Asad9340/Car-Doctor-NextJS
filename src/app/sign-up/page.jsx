@@ -1,9 +1,7 @@
 import Image from 'next/image';
-import { FaFacebook } from 'react-icons/fa';
-import { ImLinkedin } from 'react-icons/im';
-import { FaGoogle } from 'react-icons/fa';
 import Link from 'next/link';
 import SignUpForm from './components/SignUpForm';
+import SocialLogin from '../sign-in/components/SocialLogin';
 const SignUp = () => {
   return (
     <div className="px-5 xl:px-8 max-w-7xl mx-auto">
@@ -25,9 +23,7 @@ const SignUp = () => {
           <div className="flex flex-col gap-4 md:gap-8 text-center my-4 md:my-8">
             <p className="font-medium text-lg text-[#444]">Or Sign Up with</p>
             <div className=" flex gap-3 md:gap-6 items-center justify-center">
-              <FaFacebook className="text-2xl md:text-4xl" />
-              <ImLinkedin className="text-2xl md:text-4xl" />
-              <FaGoogle className="text-2xl md:text-4xl" />
+              <SocialLogin />
             </div>
             <p className="text-lg text-[#737373] leading-[30px]">
               Already have an account?{' '}
