@@ -5,6 +5,7 @@ import { signOut, useSession } from 'next-auth/react';
 
 const NavBar = () => {
   const { data: session, status } = useSession();
+  console.log(session);
   return (
     <div>
       <div>
@@ -50,9 +51,22 @@ const NavBar = () => {
               </ul>
               <div className="hidden xl:flex items-center space-x-5">
                 {status === 'authenticated' ? (
-                  <button onClick={()=>signOut()} className="px-6 py-2 border border-[#FF3811] font-semibold text-lg rounded-md text-[#FF3811] hover:bg-[#ff3911d3] hover:text-white transition duration-300">
-                    LogOut
-                  </button>
+                  <>
+                    <Image
+                      className="w-[50px] h-[50px] object-cover object-center "
+                      src={session?.user?.image}
+                      width={50}
+                      height={50}
+                      alt="login user"
+                      title={session?.user?.name}
+                    />
+                    <button
+                      onClick={() => signOut()}
+                      className="px-6 py-2 border border-[#FF3811] font-semibold text-lg rounded-md text-[#FF3811] hover:bg-[#ff3911d3] hover:text-white transition duration-300"
+                    >
+                      LogOut
+                    </button>
+                  </>
                 ) : (
                   <div className="flex gap-3 items-center justify-center">
                     <Link

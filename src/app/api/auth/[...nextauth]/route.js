@@ -1,19 +1,16 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { SignInUser } from './../../../actions/auth/SignInUser';
 import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
-export const authOptions = {
+import { SignInUser } from './../../../actions/auth/SignInUser';
+
+const authOptions = {
   providers: [
     CredentialsProvider({
       name: 'Credentials',
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         const user = await SignInUser(credentials);
-        if (user) {
-          return user.user;
-        } else {
-          return null;
-        }
+        return user?.user || null;
       },
     }),
     GoogleProvider({

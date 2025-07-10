@@ -1,12 +1,14 @@
-"use client"
-import { signIn } from "next-auth/react";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+'use client';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const SocialLogin = () => {
-  const handleSocialMediaLogin =async (providerName)=>{
-    const result = await signIn(providerName,{redirect:false});
-    console.log(result)
-  }
+  const router = useRouter();
+  const handleSocialMediaLogin = async providerName => {
+    await signIn(providerName, { callbackUrl: '/' }); 
+  };
   return (
     <>
       <FaGithub
@@ -19,6 +21,6 @@ const SocialLogin = () => {
       />
     </>
   );
-}
+};
 
-export default SocialLogin
+export default SocialLogin;
