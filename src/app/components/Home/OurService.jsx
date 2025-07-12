@@ -9,7 +9,7 @@ const OurService = async () => {
   );
   const servicesData = await servicesCollection.find({}).toArray();
   return (
-    <div className="px-5 xl:px-8 py-6 max-w-7xl mx-auto my-8 md:my-[120px]">
+    <div className="px-5 xl:px-8 py-6 max-w-7xl mx-auto my-8 md:my-[60px]">
       <div className="flex flex-col items-center gap-3 md:gap-5 mb-8 md:mb-10 max-w-[700px] mx-auto">
         <h4 className="text-xl font-bold text-[#FF3811]">Service</h4>
         <h2 className="max-w-[376] text-3xl md:text-[45px] font-bold text-[#151515] leading-normal">
