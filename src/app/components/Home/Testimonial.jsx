@@ -6,7 +6,7 @@ const Testimonial = () => {
     <div className="px-5 xl:px-12 py-6 max-w-7xl mx-auto my-8 md:my-[60px]">
       <div className="flex flex-col items-center gap-3 md:gap-5 mb-8 md:mb-10 max-w-[700px] mx-auto">
         <h4 className="text-xl font-bold text-[#FF3811]">Testimonial</h4>
-        <h2 className="max-w-[376] text-3xl md:text-[45px] font-bold text-[#151515] leading-normal">
+        <h2 className=" text-3xl md:text-[45px] font-bold text-[#151515] leading-normal">
           What Customer Says
         </h2>
         <p className="text-base text-[#737373] leading-[30px] text-center">
@@ -20,14 +20,14 @@ const Testimonial = () => {
             <div className="flex gap-5 item-center">
               <Image
                 className="w-[60px] h-[60px] object-cover rounded-full "
-                src="https://i.postimg.cc/dtMXPtvP/profile.jpg"
+                src="https://i.postimg.cc/6QWLjNS5/Ellipse-2.jpg"
                 width={60}
                 height={60}
                 alt="reviewer image"
               />
               <div className="flex flex-col gap-2">
                 <h4 className=" text-2xl font-bold text-[#444]">
-                  Md Asadul Islam
+                  Awlad Hossain
                 </h4>
                 <p className=" text-xl font-semibold text-[#444]">
                   Businessman
@@ -75,9 +75,7 @@ const Testimonial = () => {
                 <h4 className=" text-2xl font-bold text-[#444]">
                   Md Asadul Islam
                 </h4>
-                <p className=" text-xl font-semibold text-[#444]">
-                  Businessman
-                </p>
+                <p className=" text-xl font-semibold text-[#444]">Student</p>
               </div>
             </div>
 
