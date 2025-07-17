@@ -1,9 +1,17 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-10 mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <div>
-          <h4 className="text-lg font-semibold mb-4">Company</h4>
+          <Image
+            className="w-[70px] h-[50px] object-contain"
+            src="/assets/logo.svg"
+            width={107}
+            height={87}
+            alt="Car Doctor Logo"
+          />
           <ul className="space-y-2 text-sm">
             <li>
               <a href="#" className="hover:underline">
